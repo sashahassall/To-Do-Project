@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="631.0" prefWidth="907.0" stylesheets="@style.css">
+         <styleClass>
+            <String fx:value="linear-gradient( to right top" />
+            <String fx:value="pane" />
+            <String fx:value="#facd68" />
+            <String fx:value="#fc76b3);" />
+         </styleClass>
+         <children>
+            <AnchorPane layoutX="45.0" layoutY="40.0" prefHeight="195.0" prefWidth="588.0" styleClass="anchor-pane">
+               <effect>
+                  <ColorAdjust brightness="-0.21" contrast="0.14" hue="-0.08" saturation="-0.14" />
+               </effect>
+               <children>
+                  <Label layoutX="26.0" layoutY="12.0" prefHeight="72.0" prefWidth="368.0" text="TO-DO NOTEPAD" textFill="WHITE">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="15.0" layoutY="107.0" prefHeight="54.0" prefWidth="492.0" styleClass="anchor-pane">
+                     <effect>
+                        <ColorAdjust brightness="-0.21" contrast="0.14" hue="-0.08" saturation="-0.14" />
+                     </effect>
+                     <children>
+                        <TextField fx:id="taskInput" layoutX="21.0" layoutY="3.0" prefHeight="58.0" prefWidth="451.0" promptText="add your next task" styleClass="words">
+                           <effect>
+                              <ColorAdjust brightness="1.0" />
+                           </effect>
+                        </TextField>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fx:id="plusIcon" fitHeight="51.0" fitWidth="54.0" layoutX="513.0" layoutY="112.0" onMousePressed="#initialize" pickOnBounds="true" preserveRatio="true">
+                     <effect>
+                        <ColorAdjust brightness="1.0" />
+                     </effect>
+                     <image>
+                        <Image url="@Plus.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="plusButton" layoutX="500.0" layoutY="103.0" mnemonicParsing="false" opacity="0.0" prefHeight="74.0" prefWidth="93.0" text="Button" />
+               </children>
+            </AnchorPane>
+            <Ellipse fill="DODGERBLUE" layoutX="753.0" layoutY="138.0" opacity="0.6" radiusX="94.0" radiusY="97.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle-pane">
+               <effect>
+                  <ColorAdjust brightness="-0.08" contrast="0.13" hue="0.05" />
+               </effect>
+            </Ellipse>
+            <Ellipse fill="DODGERBLUE" layoutX="774.0" layoutY="137.0" opacity="0.6" radiusX="93.0" radiusY="96.0" stroke="BLACK" strokeType="INSIDE" styleClass="circle-background">
+               <effect>
+                  <ColorAdjust brightness="-0.08" contrast="0.13" hue="0.05" />
+               </effect>
+            </Ellipse>
+            <Label fx:id="completedCount" layoutX="699.0" layoutY="83.0" text="0">
+               <font>
+                  <Font name="Yu Gothic UI Semibold" size="80.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="59.0" layoutY="259.0" prefHeight="364.0" prefWidth="803.0" style="-fx-background-color: transparent;" vbarPolicy="AS_NEEDED">
+               <content>
+                  <VBox fx:id="tasksVBox" alignment="TOP_CENTER" prefHeight="347.0" prefWidth="703.0">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </VBox>
+               </content>
+               <padding>
+                  <Insets right="30.0" top="20.0" />
+               </padding>
+            </ScrollPane>
+            <Label fx:id="countLabel1" layoutX="742.0" layoutY="80.0" text="/">
+               <font>
+                  <Font name="Yu Gothic UI Semibold" size="80.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="totalCount" layoutX="773.0" layoutY="83.0" text="0">
+               <font>
+                  <Font name="Yu Gothic UI Semibold" size="80.0" />
+               </font>
+               <effect>
+                  <ColorAdjust brightness="1.0" contrast="1.0" hue="1.0" saturation="1.0" />
+               </effect>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="101.0" fitWidth="99.0" layoutX="808.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@clipboard.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <ColorAdjust brightness="-0.01" saturation="0.1" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>
